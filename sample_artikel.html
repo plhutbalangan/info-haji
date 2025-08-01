@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artikel Contoh</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background: #2e8b57;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    .article-container {
+      display: flex;
+      flex-wrap: wrap;
+      background: white;
+      margin: 2rem auto;
+      max-width: 1000px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .article-text {
+      flex: 1;
+      padding: 2rem;
+    }
+    .article-text h1 {
+      color: #2e2e2e;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .article-text p {
+      color: #555;
+      line-height: 1.6;
+    }
+    .article-text a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: #2e8b57;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .article-image {
+      flex: 1;
+      background: url('https://plhutbalangan.github.io/info-haji/images/staff.jpg') center center no-repeat;
+      background-size: cover;
+      min-height: 300px;
+    }
+    footer {
+      background: #2e8b57;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .article-container {
+        flex-direction: column;
+      }
+      .article-image {
+        min-height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>MENU LAYANAN HAJI PLHUT BALANGAN</header>
+
+<div class="article-container">
+  <div class="article-text">
+    <h1>Tentang Layanan Kami</h1>
+    <p>
+      PLHUT Balangan hadir untuk memberikan kemudahan bagi jamaah haji dan umrah dalam mengakses layanan terpadu. 
+      Kami menyediakan informasi, bimbingan, dan bantuan administrasi secara cepat dan profesional.
+    </p>
+    <p>
+      Dengan dukungan staf yang kompeten dan teknologi digital, kami berkomitmen untuk selalu meningkatkan mutu layanan dan memberikan kenyamanan kepada masyarakat.
+    </p>
+    <a href="index.html">Kembali ke Menu</a>
+  </div>
+  <div class="article-image"></div>
+</div>
+
+<footer>© 2025 Kemenag Balangan. Semua hak dilindungi.</footer>
+
+</body>
+</html>
