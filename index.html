@@ -133,10 +133,8 @@
     }
 
     .sub-menu-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Rata tengah secara horizontal */
-      justify-content: center; /* Rata tengah secara vertikal */
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
       gap: 16px;
       padding: 1.5rem;
       max-width: 800px;
