@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cek Estimasi Keberangkatan Haji</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(45deg, #1e90ff, #2e8b57, #f1c40f, #8e44ad); /* Gradient: blue, green, yellow, purple */
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header {
+      background: #2e8b57;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header img {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      margin-top: 5px; /* Small adjustment to fix vertical alignment */
+    }
+
+    .content {
+      padding: 2rem;
+      margin: auto;
+      max-width: 800px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .content h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #2e8b57;
+    }
+
+    .content p {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .content ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .content ul li {
+      margin: 10px 0;
+      font-size: 1rem;
+      color: #333;
+      display: flex;
+      align-items: center;
+    }
+
+    .content ul li i {
+      margin-right: 10px;
+      color: #2e8b57;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .button-container a {
+      text-decoration: none;
+      padding: 12px 20px;
+      background-color: #2e8b57;
+      color: white;
+      font-size: 1rem;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    .button-container a:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      background: #2e8b57;
+      color: white;
+      text-align: center;
+      padding: 0.75rem;
+      font-size: 0.8rem;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://github.com/plhutbalangan/info-haji/blob/main/images/logokemenag1.png?raw=true" alt="Logo Kemenag">
+    Cek Estimasi Keberangkatan Haji
+  </header>
+
+  <div class="content">
+    <h2>Masukkan Nomor Pendaftaran Haji Anda</h2>
+    <p>Untuk mengecek estimasi keberangkatan haji, silakan masukkan nomor pendaftaran haji Anda di kolom berikut.</p>
+
+    <div class="button-container">
+      <a href="https://haji.kemenag.go.id/" target="_blank">
+        <i class="fas fa-calendar-day"></i> Cek Estimasi Keberangkatan
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Kemenag Balangan. Semua hak dilindungi.
+  </footer>
+
+</body>
+</html>
