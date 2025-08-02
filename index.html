@@ -8,9 +8,17 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f7f7f7;
       margin: 0;
       padding: 0;
+      background: linear-gradient(45deg, #1e90ff, #2e8b57, #f1c40f, #8e44ad); /* Gradient: blue, green, yellow, purple */
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     header {
