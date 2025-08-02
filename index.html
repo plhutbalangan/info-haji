@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -9,11 +8,17 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f7f7f7;
-	background-image: radial-gradient(circle, #e0e0e0 1px, transparent 1px);
-      background-size: 40px 40px;
+      background: linear-gradient(45deg, #1e90ff, #2e8b57, #f1c40f, #8e44ad); /* Gradient: blue, green, yellow, purple */
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
       margin: 0;
       padding: 0;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     header {
@@ -24,7 +29,7 @@
       font-weight: bold;
       font-size: 1.2rem;
     }
-	
+
     .menu-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -196,47 +201,6 @@
       <i class="fas fa-hands-helping"></i>
       <span>Bantuan</span>
     </a>
-  </div>
-
-  <!-- Sub-menu for "Informasi Haji" -->
-  <div class="sub-menu-container" id="subMenuInformasiHaji">
-    
-    <a href="#" class="menu-item">
-      <i class="fas fa-clipboard-check"></i>
-      <span>Pendaftaran</span>
-    </a>
-    <a href="#" class="menu-item">
-      <i class="fas fa-times-circle"></i>
-      <span>Pembatalan</span>
-    </a>
-	  <button class="back-btn" id="backBtnInformasiHaji">Kembali ke Menu Utama</button>
-  </div>
-
-  <!-- Sub-menu for "Dokumen" -->
-  <div class="sub-menu-container" id="subMenuDokumen">
-   
-    <a href="#" class="menu-item">
-      <i class="fas fa-file-alt"></i>
-      <span>SPPH</span>
-    </a>
-    <a href="#" class="menu-item">
-      <i class="fas fa-passport"></i>
-      <span>Paspor</span>
-    </a>
-	  <button class="back-btn" id="backBtnDokumen">Kembali ke Menu Utama</button>
-  </div>
-
-  <!-- Text content for "Perlengkapan" -->
-  <div class="content-text" id="perlengkapanContent" style="display: none;">
-  
-    <h2>Perlengkapan Haji</h2>
-    <p><strong>1. Pakaian Harian</strong><br>
-      Pastikan pakaian yang dibawa sesuai dengan musim di Arab Saudi. Pilihlah pakaian yang nyaman, pantas, dan tidak mencolok karena akan digunakan untuk beribadah di masjid. Selain itu, disarankan juga untuk membawa perlengkapan lain sesuai kebutuhan, seperti kaus kaki, pakaian dalam, jaket atau sweater, handuk, sapu tangan, masker, peci, dan mukena.
-    </p>
-    <p><strong>2. Pakaian Ihram</strong><br>
-      Bagi jemaah pria, pakaian ihram terdiri dari dua lembar kain putih tanpa jahitan. Disarankan untuk membawa dua atau tiga set kain ihram sebagai cadangan. Perlu diketahui bahwa pemerintah Arab Saudi mewajibkan penggunaan pakaian ihram saat masuk dan salat di area tawaf di Masjidil Haram. Untuk jemaah wanita, pakaian ihram umumnya berupa baju muslimah yang tidak tipis dan menutup aurat.
-    </p>
-	<button class="back-btn" id="backBtnPerlengkapan">Kembali ke Menu Utama</button>
   </div>
 
   <footer>
