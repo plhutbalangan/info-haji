@@ -9,7 +9,7 @@
     :root {
       --primary: #d3b36a;       /* sand / gold utama */
       --primary-dark: #b69342;  /* sand lebih gelap */
-      --primary-light: #f6ecd6; /* sand muda untuk badge/background */
+      --primary-light: #f6ecd6; /* sand muda */
       --text-main: #333333;
       --text-muted: #777777;
       --border-soft: #e5e5e5;
@@ -20,8 +20,9 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--page-bg); /* dasar abu muda seperti canvas */
+      background-color: var(--page-bg);
       color: var(--text-main);
+      padding-bottom: 60px; /* ruang untuk bottom nav */
     }
 
     header {
@@ -30,17 +31,18 @@
       padding: 1rem;
       text-align: center;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       box-shadow: 0 2px 8px rgba(15,23,42,0.06);
       border-bottom: 2px solid var(--primary-light);
     }
 
+    /* GRID MENU – 3 atas 3 bawah */
     .menu-container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
       padding: 1.5rem;
-      max-width: 800px;
+      max-width: 650px;
       margin: 1.5rem auto 5rem;
       justify-items: center;
     }
@@ -53,8 +55,9 @@
     .menu-item {
       background: #ffffff;
       border-radius: 14px;
-      width: 100px;
-      height: 100px;
+      width: 100%;
+      max-width: 150px;
+      height: 120px;
       padding: 1rem;
       text-align: center;
       box-shadow: 0 4px 12px rgba(15,23,42,0.06);
@@ -63,12 +66,11 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
       opacity: 0;
       transform: scale(0.9);
     }
 
-    /* animasi muncul */
     .menu-item.show {
       opacity: 1;
       transform: scale(1);
@@ -115,7 +117,7 @@
       border-top: 1px solid var(--border-soft);
       display: flex;
       justify-content: space-around;
-      padding: 0.4rem 0.3rem 0.5rem;
+      padding: 0.45rem 0.3rem 0.5rem;
       z-index: 10;
     }
 
@@ -131,7 +133,6 @@
 
     .bottom-nav a i {
       font-size: 1.2rem;
-      margin-bottom: 1px;
       transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
       border-radius: 999px;
       padding: 6px;
@@ -147,25 +148,25 @@
       color: var(--primary-dark);
     }
 
+    /* SUB MENU / CONTENT */
     .sub-menu-container {
       display: none;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
       padding: 1.5rem;
-      max-width: 800px;
+      max-width: 650px;
       margin: 1.5rem auto 5rem;
       justify-items: center;
     }
 
     .back-btn {
       margin: 0.5rem auto 0;
-      padding: 0.5rem 1.4rem;
+      padding: 0.55rem 1.4rem;
       background-color: var(--primary);
       color: white;
       border: none;
       border-radius: 999px;
       cursor: pointer;
-      text-align: center;
       font-size: 0.95rem;
       font-weight: 600;
       box-shadow: 0 4px 10px rgba(15,23,42,0.12);
@@ -178,18 +179,17 @@
       box-shadow: 0 6px 16px rgba(15,23,42,0.16);
     }
 
-    /* Style untuk konten teks "Perlengkapan" */
     .content-text {
-      max-width: 800px;
+      max-width: 650px;
       margin: 1.5rem auto 5rem;
       padding: 20px 22px;
       font-size: 1rem;
-      color: #333;
       background-color: #ffffff;
       border-radius: 14px;
       box-shadow: 0 4px 12px rgba(15,23,42,0.06);
       border: 1px solid #f1f1f1;
       line-height: 1.6;
+      display: none;
     }
 
     .content-text h2 {
@@ -200,22 +200,11 @@
       font-size: 1.25rem;
     }
 
-    .content-text strong {
-      color: #222222;
-    }
-
-    /* Ruang bawah agar tidak ketutup bottom-nav */
-    body {
-      padding-bottom: 60px;
-    }
-
-    @media (min-width: 768px) {
-      header {
-        font-size: 1.3rem;
-      }
-      .menu-item {
-        width: 120px;
-        height: 110px;
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .menu-container,
+      .sub-menu-container {
+        grid-template-columns: repeat(2, 1fr); /* HP jadi 2 per baris */
       }
     }
   </style>
@@ -223,6 +212,7 @@
 <body>
 
   <header>Menu Layanan Haji</header>
+
   <div class="menu-container">
     <a href="#" id="informasiHaji" class="menu-item">
       <i class="fas fa-kaaba"></i>
@@ -250,7 +240,7 @@
     </a>
   </div>
 
-  <!-- Sub-menu untuk "Informasi Haji" -->
+  <!-- SUB-MENU INFORMASI HAJI -->
   <div class="sub-menu-container" id="subMenuInformasiHaji">
     <a href="pendaftaran.html" class="menu-item">
       <i class="fas fa-clipboard-check"></i>
@@ -267,7 +257,7 @@
     <button class="back-btn" id="backBtnInformasiHaji">Kembali ke Menu Utama</button>
   </div>
 
-  <!-- Sub-menu untuk "Dokumen" -->
+  <!-- SUB-MENU DOKUMEN -->
   <div class="sub-menu-container" id="subMenuDokumen">
     <a href="#" class="menu-item">
       <i class="fas fa-file-alt"></i>
@@ -280,14 +270,14 @@
     <button class="back-btn" id="backBtnDokumen">Kembali ke Menu Utama</button>
   </div>
 
-  <!-- Konten teks untuk "Perlengkapan" -->
-  <div class="content-text" id="perlengkapanContent" style="display: none;">
+  <!-- KONTEN PERLENGKAPAN -->
+  <div class="content-text" id="perlengkapanContent">
     <h2>Perlengkapan Haji</h2>
     <p><strong>1. Pakaian Harian</strong><br>
-      Pastikan pakaian yang dibawa sesuai dengan musim di Arab Saudi. Pilihlah pakaian yang nyaman, pantas, dan tidak mencolok karena akan digunakan untuk beribadah di masjid. Selain itu, disarankan juga untuk membawa perlengkapan lain sesuai kebutuhan, seperti kaus kaki, pakaian dalam, jaket atau sweater, handuk, sapu tangan, masker, peci, dan mukena.
+      Pastikan pakaian yang dibawa sesuai dengan musim di Arab Saudi. Pilih pakaian yang nyaman, pantas, dan tidak mencolok karena akan digunakan untuk beribadah di masjid.
     </p>
     <p><strong>2. Pakaian Ihram</strong><br>
-      Bagi jemaah pria, pakaian ihram terdiri dari dua lembar kain putih tanpa jahitan. Disarankan untuk membawa dua atau tiga set kain ihram sebagai cadangan. Perlu diketahui bahwa pemerintah Arab Saudi mewajibkan penggunaan pakaian ihram saat masuk dan salat di area tawaf di Masjidil Haram. Untuk jemaah wanita, pakaian ihram umumnya berupa baju muslimah yang tidak tipis dan menutup aurat.
+      Untuk pria terdiri dari dua lembar kain putih tanpa jahitan. Untuk wanita berupa pakaian muslimah yang menutup aurat dan tidak tipis.
     </p>
     <button class="back-btn" id="backBtnPerlengkapan">Kembali ke Menu Utama</button>
   </div>
@@ -304,54 +294,46 @@
   </div>
 
   <script>
-    // animasi muncul satu per satu
+    // animasi setiap menu muncul satu per satu
     document.addEventListener("DOMContentLoaded", () => {
       const items = document.querySelectorAll(".menu-item");
       items.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add("show");
-        }, index * 200);
+        setTimeout(() => item.classList.add("show"), index * 180);
       });
     });
 
-    // Event listener untuk menu Informasi Haji
-    document.getElementById('informasiHaji').addEventListener('click', function(event) {
-      event.preventDefault();
+    document.getElementById('informasiHaji').onclick = e => {
+      e.preventDefault();
       document.querySelector('.menu-container').style.display = 'none';
       document.getElementById('subMenuInformasiHaji').style.display = 'grid';
-    });
+    };
 
-    // Event listener untuk menu Dokumen
-    document.getElementById('dokumen').addEventListener('click', function(event) {
-      event.preventDefault();
+    document.getElementById('dokumen').onclick = e => {
+      e.preventDefault();
       document.querySelector('.menu-container').style.display = 'none';
       document.getElementById('subMenuDokumen').style.display = 'grid';
-    });
+    };
 
-    // Event listener untuk menu Perlengkapan
-    document.getElementById('perlengkapan').addEventListener('click', function(event) {
-      event.preventDefault();
+    document.getElementById('perlengkapan').onclick = e => {
+      e.preventDefault();
       document.querySelector('.menu-container').style.display = 'none';
       document.getElementById('perlengkapanContent').style.display = 'block';
-    });
+    };
 
-    // Kembali ke menu utama (Informasi Haji)
-    document.getElementById('backBtnInformasiHaji').addEventListener('click', function() {
+    document.getElementById('backBtnInformasiHaji').onclick = () => {
       document.getElementById('subMenuInformasiHaji').style.display = 'none';
       document.querySelector('.menu-container').style.display = 'grid';
-    });
+    };
 
-    // Kembali ke menu utama (Dokumen)
-    document.getElementById('backBtnDokumen').addEventListener('click', function() {
+    document.getElementById('backBtnDokumen').onclick = () => {
       document.getElementById('subMenuDokumen').style.display = 'none';
       document.querySelector('.menu-container').style.display = 'grid';
-    });
+    };
 
-    // Kembali ke menu utama (Perlengkapan)
-    document.getElementById('backBtnPerlengkapan').addEventListener('click', function() {
+    document.getElementById('backBtnPerlengkapan').onclick = () => {
       document.getElementById('perlengkapanContent').style.display = 'none';
       document.querySelector('.menu-container').style.display = 'grid';
-    });
+    };
   </script>
 
 </body>
