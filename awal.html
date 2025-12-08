@@ -6,28 +6,33 @@
   <title>Menu Layanan Haji</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #d3b36a;       /* sand / gold utama */
+      --primary-dark: #b69342;  /* sand lebih gelap */
+      --primary-light: #f6ecd6; /* sand muda untuk badge/background */
+      --text-main: #333333;
+      --text-muted: #777777;
+      --border-soft: #e5e5e5;
+      --page-bg: #f5f5f7;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(45deg, #1e90ff, #2e8b57, #f1c40f, #8e44ad); /* Gradient: blue, green, yellow, purple */
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-    }
-
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+      background-color: var(--page-bg); /* dasar abu muda seperti canvas */
+      color: var(--text-main);
     }
 
     header {
-      background: #2e8b57;
-      color: white;
+      background: #ffffff;
+      color: #222222;
       padding: 1rem;
       text-align: center;
       font-weight: bold;
       font-size: 1.2rem;
+      box-shadow: 0 2px 8px rgba(15,23,42,0.06);
+      border-bottom: 2px solid var(--primary-light);
     }
 
     .menu-container {
@@ -36,7 +41,7 @@
       gap: 16px;
       padding: 1.5rem;
       max-width: 800px;
-      margin: auto;
+      margin: 1.5rem auto 5rem;
       justify-items: center;
     }
 
@@ -46,20 +51,21 @@
     }
 
     .menu-item {
-      background: white;
-      border-radius: 12px;
+      background: #ffffff;
+      border-radius: 14px;
       width: 100px;
       height: 100px;
       padding: 1rem;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+      border: 1px solid #f1f1f1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       opacity: 0;
-      transform: scale(0.8);
+      transform: scale(0.9);
     }
 
     /* animasi muncul */
@@ -69,35 +75,35 @@
     }
 
     .menu-item:hover {
-      transform: translateY(-5px) scale(1.05);
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(15,23,42,0.12);
+      border-color: var(--primary-light);
     }
 
     .menu-item i {
       font-size: 1.8rem;
-      color: #2e8b57;
-      transition: transform 0.3s ease;
+      color: var(--primary-dark);
+      transition: transform 0.25s ease;
     }
 
     .menu-item:hover i {
-      transform: scale(1.3);
+      transform: scale(1.18);
     }
 
     .menu-item span {
       margin-top: 0.5rem;
       font-size: 0.9rem;
-      font-weight: bold;
-      color: #333;
+      font-weight: 600;
+      color: #333333;
     }
 
     footer {
-      background: #2e8b57;
-      color: white;
+      background: #ffffff;
+      color: var(--text-muted);
       text-align: center;
       padding: 0.75rem;
       font-size: 0.8rem;
-      position: relative;
-      bottom: 0;
-      width: 100%;
+      border-top: 1px solid var(--border-soft);
       margin-top: 2rem;
     }
 
@@ -106,30 +112,39 @@
       bottom: 0;
       width: 100%;
       background: #ffffff;
-      border-top: 1px solid #ccc;
+      border-top: 1px solid var(--border-soft);
       display: flex;
       justify-content: space-around;
-      padding: 0.5rem 0;
+      padding: 0.4rem 0.3rem 0.5rem;
       z-index: 10;
     }
 
     .bottom-nav a {
       text-decoration: none;
-      color: #2e8b57;
-      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.72rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 2px;
     }
 
     .bottom-nav a i {
       font-size: 1.2rem;
-      margin-bottom: 2px;
-      transition: transform 0.3s ease;
+      margin-bottom: 1px;
+      transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+      border-radius: 999px;
+      padding: 6px;
     }
 
     .bottom-nav a:hover i {
-      transform: scale(1.2);
+      transform: scale(1.12);
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .bottom-nav a:hover {
+      color: var(--primary-dark);
     }
 
     .sub-menu-container {
@@ -138,39 +153,71 @@
       gap: 16px;
       padding: 1.5rem;
       max-width: 800px;
-      margin: auto;
+      margin: 1.5rem auto 5rem;
       justify-items: center;
     }
 
     .back-btn {
-      margin: 1rem auto;
-      padding: 0.5rem 1rem;
-      background-color: #2e8b57;
+      margin: 0.5rem auto 0;
+      padding: 0.5rem 1.4rem;
+      background-color: var(--primary);
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 999px;
       cursor: pointer;
       text-align: center;
-      font-size: 1rem;
-      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(15,23,42,0.12);
+      transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
     }
 
     .back-btn:hover {
-      background-color: #276f46;
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(15,23,42,0.16);
     }
 
-    /* Style for the text content in "Perlengkapan" */
+    /* Style untuk konten teks "Perlengkapan" */
     .content-text {
       max-width: 800px;
-      margin: auto;
-      padding: 20px;
+      margin: 1.5rem auto 5rem;
+      padding: 20px 22px;
       font-size: 1rem;
       color: #333;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+      border: 1px solid #f1f1f1;
+      line-height: 1.6;
     }
 
+    .content-text h2 {
+      margin-top: 0;
+      color: #222222;
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+      font-size: 1.25rem;
+    }
+
+    .content-text strong {
+      color: #222222;
+    }
+
+    /* Ruang bawah agar tidak ketutup bottom-nav */
+    body {
+      padding-bottom: 60px;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        font-size: 1.3rem;
+      }
+      .menu-item {
+        width: 120px;
+        height: 110px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -181,7 +228,7 @@
       <i class="fas fa-kaaba"></i>
       <span>Informasi Haji</span>
     </a>
-     <a href="cek.html" class="menu-item">
+    <a href="cek.html" class="menu-item">
       <i class="fas fa-plane"></i>
       <span>Cek Keberangkatan</span>
     </a>
@@ -189,14 +236,13 @@
       <i class="fas fa-suitcase-rolling"></i>
       <span>Perlengkapan</span>
     </a>
-     <a href="#" id="dokumen" class="menu-item">
+    <a href="#" id="dokumen" class="menu-item">
       <i class="fas fa-passport"></i>
       <span>Dokumen</span>
+    </a>
     <a href="manasik.html" class="menu-item">
       <i class="fas fa-mosque"></i>
       <span>Manasik</span>
-    </a>
-  
     </a>
     <a href="bantuan.html" class="menu-item">
       <i class="fas fa-hands-helping"></i>
@@ -204,7 +250,7 @@
     </a>
   </div>
 
-  <!-- Sub-menu for "Informasi Haji" -->
+  <!-- Sub-menu untuk "Informasi Haji" -->
   <div class="sub-menu-container" id="subMenuInformasiHaji">
     <a href="pendaftaran.html" class="menu-item">
       <i class="fas fa-clipboard-check"></i>
@@ -221,7 +267,7 @@
     <button class="back-btn" id="backBtnInformasiHaji">Kembali ke Menu Utama</button>
   </div>
 
-  <!-- Sub-menu for "Dokumen" -->
+  <!-- Sub-menu untuk "Dokumen" -->
   <div class="sub-menu-container" id="subMenuDokumen">
     <a href="#" class="menu-item">
       <i class="fas fa-file-alt"></i>
@@ -234,7 +280,7 @@
     <button class="back-btn" id="backBtnDokumen">Kembali ke Menu Utama</button>
   </div>
 
-  <!-- Text content for "Perlengkapan" -->
+  <!-- Konten teks untuk "Perlengkapan" -->
   <div class="content-text" id="perlengkapanContent" style="display: none;">
     <h2>Perlengkapan Haji</h2>
     <p><strong>1. Pakaian Harian</strong><br>
@@ -270,52 +316,40 @@
 
     // Event listener untuk menu Informasi Haji
     document.getElementById('informasiHaji').addEventListener('click', function(event) {
-      event.preventDefault();  // Mencegah navigasi default
-      // Menyembunyikan menu utama
+      event.preventDefault();
       document.querySelector('.menu-container').style.display = 'none';
-      // Menampilkan sub-menu Informasi Haji
       document.getElementById('subMenuInformasiHaji').style.display = 'grid';
     });
 
     // Event listener untuk menu Dokumen
     document.getElementById('dokumen').addEventListener('click', function(event) {
-      event.preventDefault();  // Mencegah navigasi default
-      // Menyembunyikan menu utama
+      event.preventDefault();
       document.querySelector('.menu-container').style.display = 'none';
-      // Menampilkan sub-menu Dokumen
       document.getElementById('subMenuDokumen').style.display = 'grid';
     });
 
     // Event listener untuk menu Perlengkapan
     document.getElementById('perlengkapan').addEventListener('click', function(event) {
-      event.preventDefault();  // Mencegah navigasi default
-      // Menyembunyikan menu utama
+      event.preventDefault();
       document.querySelector('.menu-container').style.display = 'none';
-      // Menampilkan teks konten Perlengkapan
       document.getElementById('perlengkapanContent').style.display = 'block';
     });
 
-    // Event listener untuk kembali ke menu utama (Informasi Haji)
+    // Kembali ke menu utama (Informasi Haji)
     document.getElementById('backBtnInformasiHaji').addEventListener('click', function() {
-      // Menyembunyikan sub-menu
       document.getElementById('subMenuInformasiHaji').style.display = 'none';
-      // Menampilkan menu utama
       document.querySelector('.menu-container').style.display = 'grid';
     });
 
-    // Event listener untuk kembali ke menu utama (Dokumen)
+    // Kembali ke menu utama (Dokumen)
     document.getElementById('backBtnDokumen').addEventListener('click', function() {
-      // Menyembunyikan sub-menu
       document.getElementById('subMenuDokumen').style.display = 'none';
-      // Menampilkan menu utama
       document.querySelector('.menu-container').style.display = 'grid';
     });
 
-    // Event listener untuk kembali ke menu utama (Perlengkapan)
+    // Kembali ke menu utama (Perlengkapan)
     document.getElementById('backBtnPerlengkapan').addEventListener('click', function() {
-      // Menyembunyikan teks konten Perlengkapan
       document.getElementById('perlengkapanContent').style.display = 'none';
-      // Menampilkan menu utama
       document.querySelector('.menu-container').style.display = 'grid';
     });
   </script>
