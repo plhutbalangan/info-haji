@@ -6,25 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --primary: #15803d;
-      --primary-soft: #dcfce7;
-      --primary-softer: #f0fdf4;
+      --primary: #d3b36a;        /* sand / gold utama */
+      --primary-dark: #b69342;   /* sand lebih gelap */
+      --primary-soft: #f6ecd6;   /* sand muda */
+      --primary-softer: #fdfaf3; /* sangat muda */
       --accent: #0ea5e9;
-      --bg: #f3f4f6;
+      --bg: #f5f5f7;
       --card-radius: 20px;
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, #e0f2fe 0, transparent 45%),
-        radial-gradient(circle at top right, #bbf7d0 0, transparent 40%),
+        radial-gradient(circle at top left, var(--primary-soft) 0, transparent 45%),
+        radial-gradient(circle at top right, #e5e7eb 0, transparent 40%),
         #f9fafb;
       color: #0f172a;
       -webkit-font-smoothing: antialiased;
     }
-    .wrapper { max-width: 1080px; margin: 24px auto 32px; padding: 0 16px; }
+
+    .wrapper {
+      max-width: 1080px;
+      margin: 24px auto 32px;
+      padding: 0 16px;
+    }
 
     /* HERO */
     .hero {
@@ -32,23 +40,25 @@
       overflow: hidden;
       border-radius: 24px;
       padding: 22px 22px 18px;
-      background: radial-gradient(circle at top left, #22c55e 0, #15803d 42%, #14532d 100%);
+      background: radial-gradient(circle at top left, #f8f3e3 0, #d3b36a 42%, #8b5e1a 100%);
       color: #f9fafb;
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
       isolation: isolate;
     }
+
     .hero-content {
       display: flex;
       flex-wrap: wrap;
       gap: 18px;
       align-items: center;
     }
+
     .hero-icon {
       width: 72px;
       height: 72px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, rgba(248, 250, 252, 0.35) 0, transparent 55%);
-      border: 1px solid rgba(248, 250, 252, 0.4);
+      background: radial-gradient(circle at 30% 20%, rgba(248, 250, 252, 0.4) 0, transparent 55%);
+      border: 1px solid rgba(248, 250, 252, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -56,16 +66,32 @@
       flex-shrink: 0;
       box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
     }
-    .hero-main { flex: 1 1 260px; min-width: 0; }
-    .hero-text h1 { margin: 0 0 4px; font-size: 1.5rem; }
-    .hero-text p { margin: 0; font-size: 0.92rem; }
 
-    .hero-tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.74rem; }
+    .hero-main { flex: 1 1 260px; min-width: 0; }
+
+    .hero-text h1 {
+      margin: 0 0 4px;
+      font-size: 1.5rem;
+    }
+
+    .hero-text p {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+
+    .hero-tags {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.74rem;
+    }
+
     .tag-pill {
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(248, 250, 252, 0.5);
-      background: rgba(15, 23, 42, 0.22);
+      border: 1px solid rgba(248, 250, 252, 0.55);
+      background: rgba(15, 23, 42, 0.28);
       backdrop-filter: blur(4px);
       display: flex;
     }
@@ -97,10 +123,10 @@
       align-items: center;
       gap: 6px;
       padding: 7px 13px;
-      margin-top: 2px;
+      margin-top: 6px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.35);
-      border: 1px solid rgba(248, 250, 252, 0.6);
+      background: rgba(15, 23, 42, 0.25);
+      border: 1px solid rgba(248, 250, 252, 0.7);
       color: #f9fafb;
       font-size: 0.8rem;
       text-decoration: none;
@@ -108,15 +134,22 @@
       transition: 0.15s ease;
       white-space: nowrap;
     }
+
     .download-btn:hover {
       transform: translateY(-2px);
-      background: rgba(15, 23, 42, 0.55);
+      background: rgba(15, 23, 42, 0.5);
       box-shadow: 0 8px 18px rgba(15, 23, 42, 0.35);
     }
 
     /* LAYOUT */
-    .layout { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    @media (max-width: 880px) { 
+    .layout {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    @media (max-width: 880px) {
       .layout { grid-template-columns: 1fr; }
       .hero-right { align-items: flex-start; text-align: left; margin-top: 10px; }
     }
@@ -128,36 +161,101 @@
       border: 1px solid rgba(148, 163, 184, 0.18);
       box-shadow: 0 14px 25px rgba(15, 23, 42, 0.08);
     }
-    .section-label { font-size: 0.78rem; font-weight: 600; color: #6b7280; margin-bottom: 6px; text-transform: uppercase; }
-    .section-subtitle { font-size: 0.78rem; color: #6b7280; margin-bottom: 10px; }
 
-    .list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 0.85rem; }
-    .list-item { background: #f9fafb; padding: 8px 12px; border-radius: 12px; display: flex; gap: 10px; }
-    .list-number {
-      width: 24px; height: 24px; border-radius: 999px;
-      background: linear-gradient(135deg, #22c55e, #15803d);
-      display: flex; align-items: center; justify-content: center;
-      color: white; font-size: 0.76rem; font-weight: 600;
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
     }
-    .highlight { color: var(--primary); font-weight: 600; }
+
+    .section-subtitle {
+      font-size: 0.78rem;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+      font-size: 0.85rem;
+    }
+
+    .list-item {
+      background: #f9fafb;
+      padding: 8px 12px;
+      border-radius: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .list-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.76rem;
+      font-weight: 600;
+    }
+
+    .highlight {
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
 
     .sub-section {
       margin-top: 12px;
-      background: #f9fafb;
+      background: var(--primary-softer);
       padding: 12px;
       border-radius: 14px;
-      border: 1px solid #e5e7eb;
+      border: 1px solid var(--primary-soft);
     }
-    .sub-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
-    .sub-chip { font-size: 0.72rem; padding: 2px 7px; border-radius: 999px; background: #e0f2fe; color: #0369a1; }
 
-    .check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; font-size: 0.84rem; }
-    .check-item { display: flex; gap: 6px; }
+    .sub-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .sub-chip {
+      font-size: 0.72rem;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: #fef3c7;
+      color: #854d0e;
+      border: 1px solid #facc15;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 4px;
+      font-size: 0.84rem;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 6px;
+    }
 
     .note {
       margin-top: 12px;
       background: #fffbeb;
-      border: 1px dashed #f59e0b;
+      border: 1px dashed #eab308;
       border-radius: 12px;
       padding: 9px 10px;
       font-size: 0.8rem;
@@ -165,7 +263,12 @@
       gap: 6px;
     }
 
-    .footer { margin-top: 16px; text-align: right; font-size: 0.74rem; color: #9ca3af; }
+    .footer {
+      margin-top: 16px;
+      text-align: right;
+      font-size: 0.74rem;
+      color: #9ca3af;
+    }
   </style>
 </head>
 <body>
@@ -182,16 +285,14 @@
           </div>
           <div class="hero-tags">
             <div class="tag-pill">👨‍👩‍👧‍👦 Penggabungan Mahram</div>
-            <div class="tag-pill">📋 Ketentuan & Berkas</div>
-           
+            <div class="tag-pill">📋 Ketentuan &amp; Berkas</div>
           </div>
         </div>
 
         <div class="hero-right">
           <div class="hero-chip">
-         
+            📌 Info Persyaratan 1447 H
           </div>
-          
         </div>
       </div>
     </section>
@@ -207,10 +308,9 @@
           <li class="list-item"><div class="list-number">2</div> Terdaftar sebagai Jemaah Haji Reguler <strong>sebelum 22 April 2021</strong>.</li>
           <li class="list-item"><div class="list-number">3</div> Terdaftar dalam <strong>satu provinsi yang sama</strong>.</li>
           <li class="list-item"><div class="list-number">4</div> Berusia paling rendah <strong>13 tahun</strong> per <strong>21 April 2026</strong>.</li>
-          <li class="list-item"><div class="list-number">5</div> Memenuhi <strong>Istithaah Kesehatan</strong> & peserta aktif <strong>JKN</strong>.</li>
+          <li class="list-item"><div class="list-number">5</div> Memenuhi <strong>Istithaah Kesehatan</strong> &amp; peserta aktif <strong>JKN</strong>.</li>
           <li class="list-item"><div class="list-number">6</div> Belum pernah haji / sudah haji tapi minimal <strong>18 tahun</strong> yang lalu.</li>
         </ul>
-        
       </section>
 
       <!-- B. Syarat Administrasi -->
@@ -219,28 +319,35 @@
         <p class="section-subtitle">Lampirkan sesuai kategori hubungan keluarga (mahram).</p>
 
         <div class="sub-section">
-          <div class="sub-title">1. PENGGABUNGAN MAHRAM Suami / Istri <span class="sub-chip">Pasangan</span></div>
+          <div class="sub-title">
+            1. PENGGABUNGAN MAHRAM Suami / Istri
+            <span class="sub-chip">Pasangan</span>
+          </div>
           <ul class="check-list">
             <li class="check-item">📄 Fotokopi <strong>buku nikah</strong> legalisir</li>
             <li class="check-item">📄 <strong>Kartu Keluarga</strong> legalisir</li>
-            <li class="check-item">📄 Fotokopi <strong>KTP suami & istri</strong></li>
+            <li class="check-item">📄 Fotokopi <strong>KTP suami &amp; istri</strong></li>
             <li class="check-item">📝 <strong>Surat permohonan</strong> penggabungan mahram</li>
             <li class="check-item">🧾 <strong>SPTJM Formulir-3 bermaterai</strong></li>
             <li class="check-item">📄 <strong>SPPH penggabung</strong></li>
-              </ul>
+          </ul>
         </div>
 
         <div class="sub-section">
-          <div class="sub-title">2. PENGGABUNGAN MAHRAM Anak / Orang Tua / Saudara Kandung <span class="sub-chip">Keluarga Inti</span></div>
+          <div class="sub-title">
+            2. PENGGABUNGAN MAHRAM Anak / Orang Tua / Saudara Kandung
+            <span class="sub-chip">Keluarga Inti</span>
+          </div>
           <ul class="check-list">
             <li class="check-item">📄 <strong>Akta kelahiran</strong> legalisir</li>
-            <li class="check-item">📄 <strong>KK penggabung & jemaah</strong> legalisir</li>
+            <li class="check-item">📄 <strong>KK penggabung &amp; jemaah</strong> legalisir</li>
             <li class="check-item">📄 Fotokopi <strong>KTP penggabung</strong></li>
             <li class="check-item">📝 <strong>Surat permohonan</strong> penggabungan mahram</li>
             <li class="check-item">🧾 <strong>SPTJM Formulir-3 bermaterai</strong></li>
             <li class="check-item">📄 <strong>SPPH penggabung</strong></li>
-                  </ul>
-		  <!-- Tombol download terpisah -->
+          </ul>
+
+          <!-- Tombol download -->
           <a href="https://docs.google.com/document/d/1oG0J5Y5DiLZw9hpbDmqPWnAG-MrdzLd5/edit?usp=drive_link&ouid=100688270039459893135&rtpof=true&sd=true"
              class="download-btn"
              target="_blank"
@@ -255,17 +362,18 @@
           </a>
         </div>
 
-        <div class="note"> 📁 Berkas usul dimasukkan kedalam map dan diberi keterangan Nama penggabung dan jemaah haji serta No WA aktif.</div>
-		  <div class="note">⚠️ Batas waktu penerimaan berkas usulan sampai tanggal 19 Desember 2025 Pukul 11.00 WITA.</div>
+        <div class="note">
+          📁 Berkas usul dimasukkan ke dalam map dan diberi keterangan Nama penggabung dan jemaah haji serta No WA aktif.
+        </div>
+        <div class="note">
+          ⚠️ Batas waktu penerimaan berkas usulan sampai tanggal 19 Desember 2025 Pukul 11.00 WITA.
+        </div>
       </section>
     </div>
 
-    <div class="footer">PUSAT LAYANAN HAJI DAN UMRAH TERPADU – KEMENAG KAB. BALANGAN</div>
+    <div class="footer">
+      PUSAT LAYANAN HAJI DAN UMRAH TERPADU – KEMENAG KAB. BALANGAN
+    </div>
   </div>
 </body>
 </html>
-
-
-
-
-
