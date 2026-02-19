@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Syarat dan Prosedur Pendaftaran Haji</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(45deg, #1e90ff, #2e8b57, #f1c40f, #8e44ad); /* Gradient: blue, green, yellow, purple */
+      background: linear-gradient(45deg, #1e90ff, #2e8b57, #f1c40f, #8e44ad);
       background-size: 400% 400%;
       animation: gradientBG 10s ease infinite;
     }
@@ -61,12 +61,25 @@
       font-size: 1rem;
       color: #333;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .content ul li i {
       margin-right: 10px;
       color: #2e8b57;
+      margin-top: 4px;
+    }
+
+    .procedure-section {
+      background-color: #d3d3d3;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    /* Supaya baris Jumat sejajar dengan Senin */
+    .indent {
+      margin-left: 160px;
     }
 
     footer {
@@ -75,77 +88,72 @@
       text-align: center;
       padding: 0.75rem;
       font-size: 0.8rem;
-      position: relative;
-      bottom: 0;
-      width: 100%;
       margin-top: 2rem;
-    }
-    
-    /* Added grey background for procedure section */
-    .procedure-section {
-      background-color: #d3d3d3;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-top: 20px;
     }
   </style>
 </head>
+
 <body>
 
-  <header>Syarat dan Prosedur Pendaftaran Haji</header>
+<header>Syarat dan Prosedur Pendaftaran Haji</header>
 
-  <div class="content">
-    <h2>Persyaratan Pendaftaran Haji</h2>
-    <p><strong>1. Persyaratan Umum:</strong></p>
+<div class="content">
+
+  <h2>Persyaratan Pendaftaran Haji</h2>
+
+  <p><strong>1. Persyaratan Umum:</strong></p>
+  <ul>
+    <li><i class="fas fa-check-circle"></i> Beragama Islam</li>
+    <li><i class="fas fa-check-circle"></i> Usia Minimal 12 Tahun</li>
+    <li><i class="fas fa-id-card"></i> KTP Domisili asli Kabupaten Balangan</li>
+    <li><i class="fas fa-calendar-day"></i> Bagi yang pernah haji minimal 18 Tahun</li>
+  </ul>
+
+  <p><strong>2. Persyaratan Administrasi:</strong></p>
+  <ul>
+    <li><i class="fas fa-copy"></i> Fotokopi KTP 1 lembar</li>
+    <li><i class="fas fa-file-alt"></i> Fotokopi Akta lahir/Buku Nikah/Ijazah terakhir (salah satu saja) 1 lembar</li>
+    <li><i class="fas fa-users"></i> Fotokopi Kartu keluarga</li>
+    <li><i class="fas fa-book"></i> Fotokopi buku tabungan haji 1 lembar</li>
+    <li><i class="fas fa-passport"></i> Fotokopi paspor bagi yang memiliki</li>
+    <li><i class="fas fa-tint"></i> Mengetahui golongan darah</li>
+    <li><i class="fas fa-camera"></i> Pas foto haji latar putih 3x4 sebanyak 5 lembar</li>
+  </ul>
+
+  <h2>Prosedur Pendaftaran Haji</h2>
+
+  <div class="procedure-section">
+    <p>Berikut adalah langkah-langkah prosedur pendaftaran haji:</p>
     <ul>
-      <li><i class="fas fa-check-circle"></i> Beragama Islam</li>
-      <li><i class="fas fa-check-circle"></i> Usia Minimal 12 Tahun</li>
-      <li><i class="fas fa-id-card"></i> KTP Domisili asli Kabupaten Balangan</li>
-      <li><i class="fas fa-calendar-day"></i> Bagi yang pernah haji minimal 18 Tahun</li>
-    </ul>
+      <li><i class="fas fa-arrow-right"></i> Datang ke Kantor Kementerian Haji dan Umrah Kabupaten Balangan dengan menyiapkan setoran awal 25 juta rupiah di rekening Mbanking (Non Tunai) dan persyaratan administrasi</li>
 
-    <p><strong>2. Persyaratan Administrasi:</strong></p>
-    <ul>
-      <li><i class="fas fa-copy"></i> Fotokopi KTP 1 lembar</li>
-      <li><i class="fas fa-file-alt"></i> Fotokopi Akta lahir/Buku Nikah/Ijazah terakhir (salah satu saja) 1 lembar</li>
-      <li><i class="fas fa-users"></i> Fotokopi Kartu keluarga</li>
-      <li><i class="fas fa-book"></i> Fotokopi buku tabungan haji 1 lembar</li>
-      <li><i class="fas fa-passport"></i> Fotokopi paspor bagi yang memiliki</li>
-      <li><i class="fas fa-tint"></i> Mengetahui golongan darah</li>
-      <li><i class="fas fa-camera"></i> Pas foto haji latar putih 3x4 sebanyak 5 lembar</li>
-    </ul>
+      <li><i class="fas fa-arrow-right"></i> Setelah membuka rekening haji dan melakukan setoran awal, jemaah haji akan diproses untuk perekaman biometrik di ruang SISKOHAT</li>
 
-    <h2>Prosedur Pendaftaran Haji</h2>
-    <div class="procedure-section">
-      <p>Berikut adalah langkah-langkah prosedur pendaftaran haji:</p>
-      <ul>
-        <li><i class="fas fa-arrow-right"></i> Datang ke Kantor Kementerian Haji dan Umrah Kabupaten Balangan dengan menyiapkan setoran awal 25 juta rupiah di rekening Mbanking (Non Tunai) dan persyaratan administrasi</li>
-        <li><i class="fas fa-arrow-right"></i> Setelah membuka rekening haji dan melakukan setoran awal, jemaah haji akan diproses untuk perekaman biometrik di ruang SISKOHAT</li>
-        <li><i class="fas fa-arrow-right"></i> Jemaah akan mendapatkan cetakkan SPPH yang berisi nomor porsi dan bukti setoran awal</li>
-        <li><i class="fas fa-arrow-right"></i> Bagi Jemaah haji yang membawa uang tunai, Pembukaan rekening haji dan setoran awal dilakukan terlebih dahulu di Bank Syariah penerima setoran haji (Bank Kalsel Syariah/BSI)</li>
+      <li><i class="fas fa-arrow-right"></i> Jemaah akan mendapatkan cetakkan SPPH yang berisi nomor porsi dan bukti setoran awal</li>
+
+      <li><i class="fas fa-arrow-right"></i> Bagi Jemaah haji yang membawa uang tunai, pembukaan rekening haji dan setoran awal dilakukan terlebih dahulu di Bank Syariah penerima setoran haji (Bank Kalsel Syariah/BSI)</li>
+
       <li>
- <li style="list-style:none;">
-  <i class="fas fa-arrow-right" style="margin-right:8px;"></i>
-  <span>
-    Waktu Layanan : Senin - Kamis Pagi Pukul 09.00 - 12.00 WITA, 
-    Siang 14.00 - 15.00 WITA
-  </span>
-  <br>
-  <span style="display:inline-block; padding-left: 165px;">
-    Jumat Pagi Pukul 08.30 - 11.30 WITA, 
-    Siang Pukul 14.00 - 15.30 WITA
-  </span>
-</li>
-
-
-
-      </ul>
-    </div>
+        <i class="fas fa-arrow-right"></i>
+        <div>
+          <div>
+            Waktu Layanan : Senin - Kamis Pagi Pukul 09.00 - 12.00 WITA,
+            Siang 14.00 - 15.00 WITA
+          </div>
+          <div class="indent">
+            Jumat Pagi Pukul 08.30 - 11.30 WITA,
+            Siang Pukul 14.00 - 15.30 WITA
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 
-  <footer>
-    © 2026 Kemenhaj Kabupaten Balangan.
-  </footer>
+</div>
+
+<footer>
+  © 2026 Kemenhaj Kabupaten Balangan.
+</footer>
 
 </body>
 </html>
